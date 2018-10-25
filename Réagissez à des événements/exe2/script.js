@@ -1,7 +1,7 @@
 function pressedKey (e) {
-	var key = String.fromCharCode(e.charCode);
-	key = key.toLowerCase();
-	var color;
+  var color;
+  var key = String.fromCharCode(e.charCode).toLowerCase();
+
 	switch (key) {
 		case "r":
 			color = "red";
@@ -15,11 +15,10 @@ function pressedKey (e) {
 		case "b":
 			color = "white";
 			break;
-	}
-	var divElts = document.getElementsByTagName("div");
-	for (var i = 0; i < divElts.length; i++) {
-		divElts[i].style.backgroundColor = color;
-	}
+  }
+
+  var paragraphs = document.querySelectorAll("div");
+  paragraphs.forEach((paragraph) => { paragraph.style.backgroundColor = color; })
 }
 
 document.addEventListener("keypress", pressedKey);
